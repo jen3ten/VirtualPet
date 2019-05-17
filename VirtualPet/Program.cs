@@ -8,7 +8,7 @@ namespace VirtualPet
         {
             Console.WriteLine("Welcome to Virtual Pet!");
             Console.WriteLine("Type in start to begin game. At any time, type exit to end game.");
-            bool gameIsRunning = false;                                         //program is off.
+            bool gameIsRunning = false;                                         
             string mainMenu = Console.ReadLine();
             if(mainMenu == "start")
             {
@@ -17,10 +17,13 @@ namespace VirtualPet
 
 
             string gameInput;
-            while(gameIsRunning)
+            Menu menu = new Menu();
+
+            while (gameIsRunning)
             {
                 Console.WriteLine("What kind of pet do you want to create?");
                 Console.WriteLine("For cat type \"cat\".");
+                Menu();
                 gameInput = Console.ReadLine();
                             
                 if (gameInput == "exit")
