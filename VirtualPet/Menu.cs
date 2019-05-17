@@ -6,5 +6,15 @@ namespace VirtualPet
 {
     class Menu
     {
+        public Menu()
+        {
+            Console.WriteLine("Type 1, 2 or 3 to select your options.");
+
+            Console.WriteLine(" 1. Create a cat.");
+            Console.WriteLine(" 2. Create a dog.");
+            Console.WriteLine(" 3. Create a robot.");
+
+
+        }
     }
 }
