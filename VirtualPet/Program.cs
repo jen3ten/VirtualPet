@@ -15,7 +15,6 @@ namespace VirtualPet
                 gameIsRunning = true;
             }
 
-
             string gameInput;
             Menu menu = new Menu();
 
@@ -23,7 +22,9 @@ namespace VirtualPet
             {
                 Console.WriteLine("What kind of pet do you want to create?");
                 Console.WriteLine("For cat type \"cat\".");
-                Menu();
+
+                menu.ShowMenu();
+
                 gameInput = Console.ReadLine();
                             
                 if (gameInput == "exit")

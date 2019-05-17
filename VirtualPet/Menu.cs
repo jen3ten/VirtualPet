@@ -6,7 +6,7 @@ namespace VirtualPet
 {
     class Menu
     {
-        public Menu()
+        public void ShowMenu()
         {
             Console.WriteLine("Type 1, 2 or 3 to select your options.");
 
