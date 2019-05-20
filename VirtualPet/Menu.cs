@@ -33,7 +33,7 @@ namespace VirtualPet
                 return true;
 
             }
-            else if (menuInput == "2")
+            else if (menuInput == "2" && firstPet != null)
             {
                 Console.WriteLine("Your pet name is " + firstPet.Name + " and your pet is a " + firstPet.Species + ".");
 
