@@ -15,19 +15,13 @@ namespace VirtualPet
                 gameIsRunning = true;
             }
 
-            string gameInput;
             Menu menu = new Menu();
 
             while (gameIsRunning)
             {
                 Console.WriteLine("Select from these menu options.");
                 
-                menu.ShowMenu();
-
-                gameInput = Console.ReadLine();
-                            
-                if (gameInput == "exit")
-                    gameIsRunning = false;
+                gameIsRunning = menu.ShowMenu();
             }
         }
     }

@@ -6,28 +6,46 @@ namespace VirtualPet
 {
     class Menu
     {
-        public void ShowMenu()
+
+        string petName = "";
+        string petSpecies = "";
+        Pet firstPet;              
+
+        public bool ShowMenu()
         {
-            Console.WriteLine("Type 1 to create a cat.");
+            Console.WriteLine("Type 1 to create a pet.");
+            Console.WriteLine("Type 2 to show pet info.");
+            Console.WriteLine("Type 3 to exit");
+            string menuInput = Console.ReadLine();
 
-
-
-            if (Console.ReadLine() == "1");
+            if (menuInput == "1")
             {
-                Console.WriteLine("Enter your cat name:");
-                string catName = Console.ReadLine();
+                Console.WriteLine("Enter your pet name:");
+                petName = Console.ReadLine();
 
-                Console.WriteLine("Enter your cat breed:");
-                string catBreed = Console.ReadLine();
+                Console.WriteLine("Enter your pet species:");
+                petSpecies = Console.ReadLine();
 
-                Cat firstCat = new Cat(catName, catBreed);
+                firstPet = new Pet(petName, petSpecies);
 
-                Console.WriteLine(firstCat.Name + " was added to the shelter!");
+                Console.WriteLine(firstPet.Name + " was added to the shelter!");
+
+                return true;
 
             }
+            else if (menuInput == "2")
+            {
+                Console.WriteLine("Your pet name is " + firstPet.Name + " and your pet is a " + firstPet.Species + ".");
 
-            
+                return true;
 
+            }
+            else if (menuInput == "3")
+            {
+                return false;
+            }
+
+            else return true;
 
            
 

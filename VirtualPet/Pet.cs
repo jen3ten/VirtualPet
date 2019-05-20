@@ -6,15 +6,15 @@ Given I'm a player, when I choose to add a pet to the shelter from the main menu
 */
 namespace VirtualPet
 {
-    class Cat
+    class Pet
     {
         public string Name;
-        public string Breed;
+        public string Species;
 
-       public Cat(string name, string breed)
+       public Pet(string name, string species)
         {
             Name = name;
-            Breed = breed;
+            Species = species;
                 }
     }
 }
