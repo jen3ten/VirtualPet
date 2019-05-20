@@ -8,11 +8,17 @@ namespace VirtualPet
     {
         public string Name;
         public string Species;
+        public int Hunger;
+        public int Boredom;
+        public int Health;
 
-       public Pet(string name, string species)
+       public Pet(string name, string species, int hunger, int boredom, int health )
         {
             Name = name;
             Species = species;
+            Hunger = hunger;
+            Boredom = boredom;
+            Health = health;
                 }
     }
 }

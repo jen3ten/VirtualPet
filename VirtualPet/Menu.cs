@@ -15,7 +15,8 @@ namespace VirtualPet
         {
             Console.WriteLine("Type 1 to create a pet.");
             Console.WriteLine("Type 2 to show pet info.");
-            Console.WriteLine("Type 3 to exit");
+            Console.WriteLine("Type 3 to show pet status");
+            Console.WriteLine("Type 4 to exit");
             string menuInput = Console.ReadLine();
 
             if (menuInput == "1")
@@ -26,7 +27,7 @@ namespace VirtualPet
                 Console.WriteLine("Enter your pet species:");
                 petSpecies = Console.ReadLine();
 
-                firstPet = new Pet(petName, petSpecies);
+                firstPet = new Pet(petName, petSpecies, 0, 0, 100);
 
                 Console.WriteLine(firstPet.Name + " was added to the shelter!");
 
@@ -40,7 +41,15 @@ namespace VirtualPet
                 return true;
 
             }
-            else if (menuInput == "3")
+            else if (menuInput == "3" && firstPet != null)
+            {
+                Console.WriteLine(firstPet.Name + "'s hunger is " + firstPet.Hunger);
+                Console.WriteLine(firstPet.Name + "'s boredom is " + firstPet.Boredom);
+                Console.WriteLine(firstPet.Name + "'s health is " + firstPet.Health);
+
+                return true;
+            }
+            else if (menuInput == "4")
             {
                 return false;
             }
