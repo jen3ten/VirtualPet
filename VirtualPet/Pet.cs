@@ -12,14 +12,16 @@ namespace VirtualPet
         public int Boredom;
         public int Health;
 
-       public Pet(string name, string species, int hunger, int boredom, int health )
-        {
+       public Pet(string name, string species)
+       {
             Name = name;
             Species = species;
-            Hunger = hunger;
-            Boredom = boredom;
-            Health = health;
-                }
+            Hunger = 0;
+            Boredom = 0;
+            Health = 100;
+       }
+
+
     }
 }
     
