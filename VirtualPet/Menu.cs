@@ -8,11 +8,28 @@ namespace VirtualPet
     {
         public void ShowMenu()
         {
-            Console.WriteLine("Type 1, 2 or 3 to select your options.");
+            Console.WriteLine("Type 1 to create a cat.");
 
-            Console.WriteLine(" 1. Create a cat.");
-            Console.WriteLine(" 2. Create a dog.");
-            Console.WriteLine(" 3. Create a robot.");
+
+
+            if (Console.ReadLine() == "1");
+            {
+                Console.WriteLine("Enter your cat name:");
+                string catName = Console.ReadLine();
+
+                Console.WriteLine("Enter your cat breed:");
+                string catBreed = Console.ReadLine();
+
+                Cat firstCat = new Cat(catName, catBreed);
+
+                Console.WriteLine(firstCat.Name + " was added to the shelter!");
+
+            }
+
+            
+
+
+           
 
 
         }

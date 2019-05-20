@@ -20,9 +20,8 @@ namespace VirtualPet
 
             while (gameIsRunning)
             {
-                Console.WriteLine("What kind of pet do you want to create?");
-                Console.WriteLine("For cat type \"cat\".");
-
+                Console.WriteLine("Select from these menu options.");
+                
                 menu.ShowMenu();
 
                 gameInput = Console.ReadLine();

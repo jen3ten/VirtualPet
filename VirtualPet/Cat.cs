@@ -9,12 +9,12 @@ namespace VirtualPet
     class Cat
     {
         public string Name;
-        public string Species;
+        public string Breed;
 
-        Cat(string name, string species)
+       public Cat(string name, string breed)
         {
             Name = name;
-            Species = species;
+            Breed = breed;
                 }
     }
 }
