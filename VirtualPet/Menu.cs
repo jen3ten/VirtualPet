@@ -18,6 +18,7 @@ namespace VirtualPet
             Console.WriteLine("Type 3 to show pet status.");
             Console.WriteLine("Type 4 to feed your pet.");
             Console.WriteLine("Type 5 to play with your pet.");
+            Console.WriteLine("Type 6 to play with your pet.");
             Console.WriteLine("Type 9 to exit\n");
             
             string menuInput = Console.ReadLine();
