@@ -43,16 +43,16 @@ namespace VirtualPet
             }
             else if (menuInput == "2" && firstPet != null)
             {
-                Console.WriteLine("\nYour pet name is " + firstPet.Name + " and your pet is a " + firstPet.Species + ".\n");
+                
+                firstPet.PetInfo();
+                
 
                 return true;
 
             }
             else if (menuInput == "3" && firstPet != null)
             {
-                Console.WriteLine("\n" + firstPet.Name + "'s hunger is " + firstPet.Hunger);
-                Console.WriteLine(firstPet.Name + "'s boredom is " + firstPet.Boredom);
-                Console.WriteLine(firstPet.Name + "'s health is " + firstPet.Health + "\n");
+                firstPet.PetStatus();
 
                 return true;
             }
