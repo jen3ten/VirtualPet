@@ -10,7 +10,7 @@ namespace VirtualPet
         string petName = "";
         string petSpecies = "";
         Pet firstPet;              
-
+        //return true required to stay in game.
         public bool ShowMenu()
         {
             Console.WriteLine("Type 1 to create a pet.");
@@ -52,6 +52,11 @@ namespace VirtualPet
                 Console.WriteLine(firstPet.Name + "'s boredom is " + firstPet.Boredom);
                 Console.WriteLine(firstPet.Name + "'s health is " + firstPet.Health + "\n");
 
+                return true;
+            }
+            else if(menuInput=="4"&& firstPet !=null)
+            {
+                firstPet.FeedPet();
                 return true;
             }
             else if (menuInput == "9")

@@ -16,11 +16,16 @@ namespace VirtualPet
        {
             Name = name;
             Species = species;
-            Hunger = 0;
-            Boredom = 0;
-            Health = 100;
+            Hunger = 50;
+            Boredom = 50;
+            Health = 75;
        }
-
+        public void FeedPet()
+        {
+            Console.WriteLine("you have fed your pet")
+            Console.WriteLine("hunger has lowered by 1");
+            this.Hunger -= 1;
+        }
 
     }
 }
