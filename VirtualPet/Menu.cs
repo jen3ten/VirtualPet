@@ -17,10 +17,11 @@ namespace VirtualPet
             Console.WriteLine("Type 2 to show pet info.");
             Console.WriteLine("Type 3 to show pet status.");
             Console.WriteLine("Type 4 to feed your pet.");
+            Console.WriteLine("Type 5 to play with your pet.");
             Console.WriteLine("Type 9 to exit\n");
             
             string menuInput = Console.ReadLine();
-
+            Console.Clear();
             if (menuInput == "1")
             {
                 
@@ -57,6 +58,16 @@ namespace VirtualPet
             else if(menuInput=="4"&& firstPet !=null)
             {
                 firstPet.FeedPet();
+                return true;
+            }
+            else if (menuInput == "5" && firstPet != null)
+            {
+                firstPet.PlayWithPet();
+                return true;
+            }
+            else if (menuInput == "6" && firstPet != null)
+            {
+                firstPet.VetVisitPet();
                 return true;
             }
             else if (menuInput == "9")
