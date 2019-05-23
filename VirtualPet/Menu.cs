@@ -62,7 +62,7 @@ namespace VirtualPet
                             petSpecies = Console.ReadLine();
 
                             firstPet = new Pet(petName, petSpecies);
-                            shelter.AddToShelterList();
+                            shelter.AddToShelterList(firstPet);
 
                             Console.WriteLine("");
                             Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
@@ -102,6 +102,7 @@ namespace VirtualPet
                             petSpecies = Console.ReadLine();
 
                             firstPet = new Pet(petName, petSpecies);
+                            shelter.AddToShelterList(firstPet);
 
                             Console.WriteLine("");
                             Console.WriteLine(firstPet.Name + " was added to the shelter!\n");

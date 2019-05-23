@@ -25,7 +25,7 @@ namespace VirtualPet
             Shelter shelter = new Shelter("Your Shelter");
         }
 
-        public void AddToShelterList()
+        public void AddToShelterList(Pet firstPet)
         {
             listOfPets.Add(firstPet);
 
@@ -36,7 +36,7 @@ namespace VirtualPet
             foreach (Pet element in listOfPets)
             {
                 Console.WriteLine(element.Name);
-                Console.WriteLine("This line is working");
+                Console.WriteLine("");
             }
         }
         
