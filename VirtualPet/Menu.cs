@@ -10,6 +10,7 @@ namespace VirtualPet
         string petSpecies = "";
         string menuInput;
         Pet firstPet;
+        Shelter shelter;
 
         public bool ShowMenu()
         {
@@ -35,6 +36,8 @@ namespace VirtualPet
                 ShowMenu();
             }
 
+            Shelter shelter = new Shelter("Your Shelter");
+
             while (gameIsRunning)
             {
 
@@ -59,6 +62,7 @@ namespace VirtualPet
                             petSpecies = Console.ReadLine();
 
                             firstPet = new Pet(petName, petSpecies);
+                            shelter.AddToShelterList();
 
                             Console.WriteLine("");
                             Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
@@ -82,6 +86,7 @@ namespace VirtualPet
                     Console.WriteLine("Type 4 to feed your pet.");
                     Console.WriteLine("Type 5 to play with your pet.");
                     Console.WriteLine("Type 6 to play with your pet.");
+                    Console.WriteLine("Type 7 to see list of pets");
                     Console.WriteLine("Type 9 to exit\n");
                     menuInput = Console.ReadLine();
                     Console.Clear();
@@ -121,6 +126,10 @@ namespace VirtualPet
 
                         case "6":
                             firstPet.VetVisitPet();
+                            break;
+
+                        case "7":
+                            shelter.ViewPetList();
                             break;
 
                         case "9":

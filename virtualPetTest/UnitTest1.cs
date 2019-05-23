@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace virtualPetTest
+namespace VirtualPet.Tests
 {
     public class UnitTest1
     {
