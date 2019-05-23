@@ -10,8 +10,7 @@ namespace VirtualPet
         string petSpecies = "";
         string menuInput;
         Pet firstPet;
-        Shelter shelter;
-
+        
         public bool ShowMenu()
         {
             bool gameIsRunning = false;

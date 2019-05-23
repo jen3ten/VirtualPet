@@ -6,8 +6,7 @@ namespace VirtualPet
 {
     class Shelter
     {
-        Pet firstPet;
-
+        
         public string Name;
 
         public Shelter(string name)
@@ -33,9 +32,11 @@ namespace VirtualPet
         
         public void ViewPetList()
         {
+            Console.WriteLine("Here are the pets in your shelter:\n");
             foreach (Pet element in listOfPets)
             {
-                Console.WriteLine(element.Name);
+                Console.WriteLine("Pet Name: " + element.Name);
+                Console.WriteLine("Pet Species: " + element.Species);
                 Console.WriteLine("");
             }
         }
