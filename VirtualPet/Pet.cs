@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VirtualPet
+namespace virtual_pet_clone
 {
     class Pet
     {
@@ -12,14 +12,14 @@ namespace VirtualPet
         public int Boredom;
         public int Health;
 
-       public Pet(string name, string species)
-       {
+        public Pet(string name, string species)
+        {
             Name = name;
             Species = species;
             Hunger = 50;
             Boredom = 50;
             Health = 75;
-       }
+        }
         public void FeedPet()
         {
             Console.WriteLine("\nyou have fed your pet");
@@ -41,7 +41,7 @@ namespace VirtualPet
             Console.WriteLine("\nyou have taken your pet to the Vet");
             Console.WriteLine("Health has increased by 1\n");
 
-            
+
             this.Health += 1;
 
         }
@@ -56,7 +56,7 @@ namespace VirtualPet
         {
             Console.WriteLine("\nYour pet name is " + this.Name + " and your pet is a " + this.Species + ".\n");
 
+
         }
     }
 }
-    
