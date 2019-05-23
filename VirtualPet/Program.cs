@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace virtual_pet_clone
+namespace VirtualPet
 {
     class Program
     {

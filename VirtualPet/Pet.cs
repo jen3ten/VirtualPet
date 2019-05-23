@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace virtual_pet_clone
+namespace VirtualPet
 {
     class Pet
     {
