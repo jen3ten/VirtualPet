@@ -14,7 +14,7 @@ namespace VirtualPet
             Name = name;
         }
 
-        List<Pet> listOfPets = new List<Pet>();
+        public List<Pet> listOfPets = new List<Pet>();
 
         
 
@@ -40,11 +40,24 @@ namespace VirtualPet
                 Console.WriteLine("");
             }
         }
+        public void ViewPetStatus()
+        {
+            Console.WriteLine("Here are your pets' status:");
+            foreach(Pet element in listOfPets)
+            {
+                Console.WriteLine("Pet name:" + element.Name  );
+                Console.WriteLine("Hunger:" + element.Hunger);
+                Console.WriteLine("Boredom:" + element.Boredom);
+                Console.WriteLine("Health:" + element.Health);
+
+
+            }
+        }
         
         public void IndividualPetList()
         {
             int i =0;
-            int j = listOfPets.Count;
+            
 
             foreach(Pet element in listOfPets)
             {
@@ -52,8 +65,8 @@ namespace VirtualPet
                 Console.WriteLine(i+ " "+element.Name );
                     
             }
-            Console.WriteLine("Input the number of your pet to access it.");
-            Console.ReadLine();
+            
+            
         }
         
 }

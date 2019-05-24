@@ -11,10 +11,12 @@ namespace VirtualPet
         string menuInput;
         Pet firstPet;
         Shelter shelter = new Shelter("Your Shelter");
-        
+
+
         public bool ShowMenu()
         {
             bool gameIsRunning = false;
+           
 
             Console.WriteLine("Welcome to Virtual Pet!");
             Console.WriteLine("Type in start to begin game. Type exit to end game.");
@@ -24,6 +26,7 @@ namespace VirtualPet
             if (mainMenu == "start")
             {
                 gameIsRunning = true;
+               
             }
 
             else if (mainMenu == "exit")
@@ -109,29 +112,38 @@ namespace VirtualPet
                             break;
 
                         case "2":
+                            IndividualPetMenu();                            
+                            break;
+
+                        case "3":
                             shelter.ViewPetList();
                             break;
-                            
-                        case "3":
-                            firstPet.PetStatus();
+                        case "4":
+                            shelter.ViewPetStatus();
                             break;
 
-                        case "4":
-                            firstPet.FeedPet();
-                            break;
 
                         case "5":
-                            firstPet.PlayWithPet();
+                            foreach(Pet element in shelter.listOfPets)
+                            {
+                                element.FeedPet();
+                            }
                             break;
 
                         case "6":
-                            firstPet.VetVisitPet();
+                            foreach(Pet element in shelter.listOfPets)
+                            {
+                                element.PlayWithPet();
+                            }
                             break;
 
                         case "7":
-                            IndividualPetMenu();
+                            foreach(Pet element in shelter.listOfPets)
+                            {
+                                element.VetVisitPet();
+                            }
                             break;
-
+                                                   
                         case "9":
                             return false;
 
@@ -139,23 +151,63 @@ namespace VirtualPet
                             Console.WriteLine("\nplease select a number in the Menu.\n");
                             break;
 
-                    }
+                    } //end switch
 
-                }
+                }//
             }
             return true;
+           
         }
+        
         public void IndividualPetMenu()
         {
-            Console.WriteLine("Select which pet you want.");
+            Console.WriteLine("Type the number of the pet you want to choose.");
             shelter.IndividualPetList();
-            
-            string input = Console.ReadLine();
-            switch (input)
+
+            int petChoiceIndex = Convert.ToInt32(Console.ReadLine());
+            Pet selectedPet = shelter.listOfPets[petChoiceIndex - 1];
+            while (menuInput =="2")
             {
-               case  
+
+            Console.WriteLine("You have selected" + selectedPet.Name + ".");
+            Console.WriteLine("What would you like to do?");
+
+            Console.WriteLine("\n 1. See pet info.");
+            Console.WriteLine(" 2. See pet status.");
+            Console.WriteLine(" 3. Feed pet.");
+            Console.WriteLine(" 4. Play with pet.");
+            Console.WriteLine(" 5. Take pet to the vet.");
+            Console.WriteLine(" 6. Choose a different pet.");
+            Console.WriteLine(" 7. Return to main menu.");
+
+
+            string secondMenuInput = Console.ReadLine();
+            switch (secondMenuInput)
+            {
+                case "1": selectedPet.PetInfo();
+                    break;
+                case "2": selectedPet.PetStatus();
+                    break;
+                case "3": selectedPet.FeedPet();
+                    break;
+                case "4": selectedPet.PlayWithPet();
+                    break;
+                case "5": selectedPet.VetVisitPet();
+                    break;
+                case "6": IndividualPetMenu();
+                    break;
+                case "7": ShowMenu();
+                    break;
             }
 
+            }
+
+
+
+
+
         }
+
+      
     }
 }
