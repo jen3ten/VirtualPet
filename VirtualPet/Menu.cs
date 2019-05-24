@@ -145,11 +145,17 @@ namespace VirtualPet
             }
             return true;
         }
-                    public void IndividualPetMenu()
-                    {
-            shelter.IndividualPetList();
+        public void IndividualPetMenu()
+        {
             Console.WriteLine("Select which pet you want.");
+            shelter.IndividualPetList();
+            
+            string input = Console.ReadLine();
+            switch (input)
+            {
+               case  
+            }
 
-                    }
+        }
     }
 }

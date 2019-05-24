@@ -44,13 +44,16 @@ namespace VirtualPet
         public void IndividualPetList()
         {
             int i =0;
+            int j = listOfPets.Count;
+
             foreach(Pet element in listOfPets)
             {
                i = i + 1;
                 Console.WriteLine(i+ " "+element.Name );
                     
             }
-
+            Console.WriteLine("Input the number of your pet to access it.");
+            Console.ReadLine();
         }
         
 }
