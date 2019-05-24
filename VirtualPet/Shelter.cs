@@ -41,5 +41,17 @@ namespace VirtualPet
             }
         }
         
+        public void IndividualPetList()
+        {
+            int i =0;
+            foreach(Pet element in listOfPets)
+            {
+               i = i + 1;
+                Console.WriteLine(i+ " "+element.Name );
+                    
+            }
+
+        }
+        
 }
 }
