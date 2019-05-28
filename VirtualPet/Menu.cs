@@ -6,10 +6,10 @@ namespace VirtualPet
 {
     class Menu
     {
-        string petName = "";
-        string petSpecies = "";
+        //string petName = "";
+        //string petSpecies = "";
         string menuInput;
-        Pet firstPet;
+        Pet firstPet= new Pet("noname","nospecies");
         Shelter shelter = new Shelter("Your Shelter");
 
 
@@ -44,42 +44,46 @@ namespace VirtualPet
             {
 
                 Console.WriteLine("Select from these menu options.");
+                //start of main menu 
+                //// if (firstPet == null)
+                // {
 
-                if (firstPet == null)
-                {
+                //     Console.WriteLine("Type 1 to create a pet.");
+                //     Console.WriteLine("Type 9 to exit\n");
+                //     menuInput = Console.ReadLine();
+                //     Console.Clear();
 
-                    Console.WriteLine("Type 1 to create a pet.");
-                    Console.WriteLine("Type 9 to exit\n");
-                    menuInput = Console.ReadLine();
-                    Console.Clear();
+                //     switch (menuInput)
+                //     {
+                //         case "1":
 
-                    switch (menuInput)
-                    {
-                        case "1":
 
-                            Console.WriteLine("\nEnter your pet name:");
-                            petName = Console.ReadLine();
+                //                 firstPet.CreatePet();
 
-                            Console.WriteLine("\nEnter your pet species:");
-                            petSpecies = Console.ReadLine();
+                //             //Console.WriteLine("\nEnter your pet name:");
+                //             //petName = Console.ReadLine();
 
-                            firstPet = new Pet(petName, petSpecies);
-                            shelter.AddToShelterList(firstPet);
+                //             //Console.WriteLine("\nEnter your pet species:");
+                //             //petSpecies = Console.ReadLine();
 
-                            Console.WriteLine("");
-                            Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
-                            break;
+                //             //firstPet = new Pet(petName, petSpecies);
+                //             //shelter.AddToShelterList(firstPet);
 
-                        case "9":
-                            return false;
+                //             //Console.WriteLine("");
+                //             //Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
+                //             break;
 
-                        default:
-                            Console.WriteLine("Please type a 1 or 9.\n");
-                            break;
-                    }
-                }
+                //         case "9":
+                //             return false;
 
-                else if (firstPet != null)
+                //         default:
+                //             Console.WriteLine("Please type a 1 or 9.\n");
+                //             break;
+                //     }
+                // }
+
+                //  else 
+                if (firstPet != null)
                 {
 
                     Console.WriteLine("Type 1 to create a pet.");
@@ -96,18 +100,18 @@ namespace VirtualPet
                     switch (menuInput)
                     {
                         case "1":
+                            shelter.CreatePet();
+                            //Console.WriteLine("\nEnter your pet name:");
+                            //petName = Console.ReadLine();
 
-                            Console.WriteLine("\nEnter your pet name:");
-                            petName = Console.ReadLine();
+                            //Console.WriteLine("\nEnter your pet species:");
+                            //petSpecies = Console.ReadLine();
 
-                            Console.WriteLine("\nEnter your pet species:");
-                            petSpecies = Console.ReadLine();
+                            //firstPet = new Pet(petName, petSpecies);
+                            //shelter.AddToShelterList(firstPet);
 
-                            firstPet = new Pet(petName, petSpecies);
-                            shelter.AddToShelterList(firstPet);
-
-                            Console.WriteLine("");
-                            Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
+                            //Console.WriteLine("");
+                            //Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
 
                             break;
 
@@ -177,8 +181,9 @@ namespace VirtualPet
             Console.WriteLine(" 3. Feed pet.");
             Console.WriteLine(" 4. Play with pet.");
             Console.WriteLine(" 5. Take pet to the vet.");
-            Console.WriteLine(" 6. Choose a different pet.");
-            Console.WriteLine(" 7. Return to main menu.");
+                Console.WriteLine(" 6. Adopt pet from shelter");
+            Console.WriteLine(" 7. Choose a different pet.");
+            Console.WriteLine(" 8. Return to main menu.");
 
 
             string secondMenuInput = Console.ReadLine();
@@ -194,9 +199,12 @@ namespace VirtualPet
                     break;
                 case "5": selectedPet.VetVisitPet();
                     break;
-                case "6": IndividualPetMenu();
+                case "6": shelter.RemoveFromShelterList(selectedPet);
+                        IndividualPetMenu();
+                     break;
+                case "7": IndividualPetMenu();
                     break;
-                case "7": ShowMenu();
+                case "8": ShowMenu();
                     break;
             }
 

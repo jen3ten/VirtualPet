@@ -6,7 +6,9 @@ namespace VirtualPet
 {
     class Shelter
     {
-        
+        string petName = "";
+        string petSpecies = "";
+
         public string Name;
 
         public Shelter(string name)
@@ -23,11 +25,33 @@ namespace VirtualPet
         {
             Shelter shelter = new Shelter("Your Shelter");
         }
+        public void CreatePet()
+        {
+
+            Pet firstPet;
+
+            Console.WriteLine("\nEnter your pet name:");
+            petName = Console.ReadLine();
+
+            Console.WriteLine("\nEnter your pet species:");
+            petSpecies = Console.ReadLine();
+
+            firstPet = new Pet(petName, petSpecies);
+            AddToShelterList(firstPet);
+
+            Console.WriteLine("");
+            Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
+        }
 
         public void AddToShelterList(Pet firstPet)
         {
             listOfPets.Add(firstPet);
 
+        }
+       public void RemoveFromShelterList(Pet selectedPet)
+        {
+            Console.WriteLine(this.Name + " has been adopted");
+            listOfPets.Remove(selectedPet);
         }
         
         public void ViewPetList()
@@ -69,5 +93,6 @@ namespace VirtualPet
             
         }
         
-}
+
+    }
 }
