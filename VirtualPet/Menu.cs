@@ -6,16 +6,15 @@ namespace VirtualPet
 {
     class Menu
     {
-        //string petName = "";
-        //string petSpecies = "";
+       
         string menuInput;
         Pet firstPet= new Pet("noname","nospecies");
         Shelter shelter = new Shelter("Your Shelter");
 
+        bool gameIsRunning = false;
 
         public bool ShowMenu()
         {
-            bool gameIsRunning = false;
            
 
             Console.WriteLine("Welcome to Virtual Pet!");
@@ -44,125 +43,78 @@ namespace VirtualPet
             {
 
                 Console.WriteLine("Select from these menu options.");
-                //start of main menu 
-                //// if (firstPet == null)
-                // {
-
-                //     Console.WriteLine("Type 1 to create a pet.");
-                //     Console.WriteLine("Type 9 to exit\n");
-                //     menuInput = Console.ReadLine();
-                //     Console.Clear();
-
-                //     switch (menuInput)
-                //     {
-                //         case "1":
-
-
-                //                 firstPet.CreatePet();
-
-                //             //Console.WriteLine("\nEnter your pet name:");
-                //             //petName = Console.ReadLine();
-
-                //             //Console.WriteLine("\nEnter your pet species:");
-                //             //petSpecies = Console.ReadLine();
-
-                //             //firstPet = new Pet(petName, petSpecies);
-                //             //shelter.AddToShelterList(firstPet);
-
-                //             //Console.WriteLine("");
-                //             //Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
-                //             break;
-
-                //         case "9":
-                //             return false;
-
-                //         default:
-                //             Console.WriteLine("Please type a 1 or 9.\n");
-                //             break;
-                //     }
-                // }
-
-                //  else 
-                if (firstPet != null)
-                {
-
-                    Console.WriteLine("Type 1 to create a pet.");
-                    Console.WriteLine("Type 2 to select an individual pet.");
-                    Console.WriteLine("Type 3 to show shelter pets info.");
-                    Console.WriteLine("Type 4 to show status of all shelter pets.");
-                    Console.WriteLine("Type 5 to feed all pets.");
-                    Console.WriteLine("Type 6 to play with all shelter pets.");
-                    Console.WriteLine("Type 7 to take all shelter pets to the vet.");
-                    Console.WriteLine("Type 9 to exit\n");
-                    menuInput = Console.ReadLine();
-                    Console.Clear();
-
-                    switch (menuInput)
-                    {
-                        case "1":
-                            shelter.CreatePet();
-                            //Console.WriteLine("\nEnter your pet name:");
-                            //petName = Console.ReadLine();
-
-                            //Console.WriteLine("\nEnter your pet species:");
-                            //petSpecies = Console.ReadLine();
-
-                            //firstPet = new Pet(petName, petSpecies);
-                            //shelter.AddToShelterList(firstPet);
-
-                            //Console.WriteLine("");
-                            //Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
-
-                            break;
-
-                        case "2":
-                            IndividualPetMenu();                            
-                            break;
-
-                        case "3":
-                            shelter.ViewPetList();
-                            break;
-                        case "4":
-                            shelter.ViewPetStatus();
-                            break;
-
-
-                        case "5":
-                            foreach(Pet element in shelter.listOfPets)
-                            {
-                                element.FeedPet();
-                            }
-                            break;
-
-                        case "6":
-                            foreach(Pet element in shelter.listOfPets)
-                            {
-                                element.PlayWithPet();
-                            }
-                            break;
-
-                        case "7":
-                            foreach(Pet element in shelter.listOfPets)
-                            {
-                                element.VetVisitPet();
-                            }
-                            break;
-                                                   
-                        case "9":
-                            return false;
-
-                        default:
-                            Console.WriteLine("\nplease select a number in the Menu.\n");
-                            break;
-
-                    } //end switch
-
-                }//
+                MainMenu();
+                
             }
             return true;
            
         }
-        
+        public void MainMenu()
+        {
+
+
+            Console.WriteLine("Type 1 to create a pet.");
+            Console.WriteLine("Type 2 to select an individual pet.");
+            Console.WriteLine("Type 3 to show shelter pets info.");
+            Console.WriteLine("Type 4 to show status of all shelter pets.");
+            Console.WriteLine("Type 5 to feed all pets.");
+            Console.WriteLine("Type 6 to play with all shelter pets.");
+            Console.WriteLine("Type 7 to take all shelter pets to the vet.");
+            Console.WriteLine("Type 9 to exit\n");
+            menuInput = Console.ReadLine();
+            Console.Clear();
+
+            switch (menuInput)
+            {
+                case "1":
+                    shelter.CreatePet();
+
+
+                    break;
+
+                case "2":
+                    IndividualPetMenu();
+                    break;
+
+                case "3":
+                    shelter.ViewPetList();
+                    break;
+                case "4":
+                    shelter.ViewPetStatus();
+                    break;
+
+
+                case "5":
+                    foreach (Pet element in shelter.listOfPets)
+                    {
+                        element.FeedPet();
+                    }
+                    break;
+
+                case "6":
+                    foreach (Pet element in shelter.listOfPets)
+                    {
+                        element.PlayWithPet();
+                    }
+                    break;
+
+                case "7":
+                    foreach (Pet element in shelter.listOfPets)
+                    {
+                        element.VetVisitPet();
+                    }
+                    break;
+
+                case "9":
+                    gameIsRunning = false;
+                    break;
+                default:
+                    Console.WriteLine("\nplease select a number in the Menu.\n");
+                    break;
+
+            } //end switch
+
+        }//
         public void IndividualPetMenu()
         {
             Console.WriteLine("Type the number of the pet you want to choose.");
@@ -200,7 +152,7 @@ namespace VirtualPet
                 case "5": selectedPet.VetVisitPet();
                     break;
                 case "6": shelter.RemoveFromShelterList(selectedPet);
-                        IndividualPetMenu();
+                        MainMenu();
                      break;
                 case "7": IndividualPetMenu();
                     break;
