@@ -9,6 +9,7 @@ namespace VirtualPet
      
         public string Name;
         public string Species;
+        public string PetType;
         public int Hunger;
         public int Boredom;
         public int Health;
@@ -17,12 +18,13 @@ namespace VirtualPet
         {
             Name = name;
             Species = species;
+            PetType = "Organic";
             Hunger = 50;
             Boredom = 50;
             Health = 75;
         }
         
-        public void FeedPet()
+        public virtual void FeedPet()
         {
             Console.Clear();
             Console.WriteLine("\nyou have fed " + this.Name);
@@ -42,7 +44,7 @@ namespace VirtualPet
 
         }
 
-        public void VetVisitPet()
+        public virtual void VetVisitPet()
         {
             Console.Clear();
             Console.WriteLine("\nyou have taken " + this.Name + " to the Vet");
@@ -64,7 +66,7 @@ namespace VirtualPet
         public void PetInfo()
         {
             Console.Clear();
-            Console.WriteLine("\nYour pet name is " + this.Name + " and your pet is a " + this.Species + ".\n");
+            Console.WriteLine("\nYour pet name is " + this.Name + " and your pet is a " + this.PetType + " " + this.Species + ".\n");
 
 
         }

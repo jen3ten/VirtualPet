@@ -8,6 +8,8 @@ namespace VirtualPet
     {
         string petName = "";
         string petSpecies = "";
+        string inputPetType = "";
+        string petType = "";
 
         public string Name;
 
@@ -26,12 +28,40 @@ namespace VirtualPet
         public void CreatePet()
         {
             Pet firstPet;
+            Robotic firstRobotPet;
 
+            Console.WriteLine("What Type of pet is it?\n" + 
+                "Type 1 for Organic\n" + 
+                "Type 2 for Robotic");
+
+            inputPetType = Console.ReadLine();
+
+            if (inputPetType == "2")
+            {
+                petType = "Robot";
+                Console.WriteLine("\nEnter your pet name:");
+                petName = Console.ReadLine();
+
+                Console.WriteLine("\nEnter your pet species:");
+                petSpecies = Console.ReadLine();
+
+
+                firstRobotPet = new Robotic(petName, petSpecies);
+                AddToShelterList(firstRobotPet);
+
+
+                Console.Clear();
+                Console.WriteLine(firstRobotPet.Name + " the " + this.petType + " " + this.petSpecies + ", was added to the shelter!\n");
+            }
+
+            else 
+            {
             Console.WriteLine("\nEnter your pet name:");
             petName = Console.ReadLine();
 
             Console.WriteLine("\nEnter your pet species:");
             petSpecies = Console.ReadLine();
+
 
             firstPet = new Pet(petName, petSpecies);
             AddToShelterList(firstPet);
@@ -39,7 +69,9 @@ namespace VirtualPet
             
             Console.Clear();
             Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
+            }
         }
+
 
         public void AddToShelterList(Pet firstPet)
         {
@@ -60,6 +92,7 @@ namespace VirtualPet
             {
                 Console.WriteLine("Pet Name: " + element.Name);
                 Console.WriteLine("Pet Species: " + element.Species);
+                Console.WriteLine("Pet Type: " + element.PetType);
                 Console.WriteLine("");
             }
         }
