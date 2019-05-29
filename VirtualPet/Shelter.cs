@@ -16,18 +16,15 @@ namespace VirtualPet
             Name = name;
         }
 
-        public List<Pet> listOfPets = new List<Pet>();
-
-        
-
+        public List <Pet> listOfPets = new List <Pet>();
 
         public void CreateShelter()
         {
             Shelter shelter = new Shelter("Your Shelter");
         }
+
         public void CreatePet()
         {
-
             Pet firstPet;
 
             Console.WriteLine("\nEnter your pet name:");
@@ -48,9 +45,10 @@ namespace VirtualPet
             listOfPets.Add(firstPet);
 
         }
-       public void RemoveFromShelterList(Pet selectedPet)
+
+        public void RemoveFromShelterList(Pet selectedPet)
         {
-            Console.WriteLine(this.Name + " has been adopted");
+            Console.WriteLine(selectedPet.Name + " has been adopted");
             listOfPets.Remove(selectedPet);
         }
         
@@ -64,6 +62,7 @@ namespace VirtualPet
                 Console.WriteLine("");
             }
         }
+
         public void ViewPetStatus()
         {
             Console.WriteLine("Here are your pets' status:");
@@ -73,26 +72,21 @@ namespace VirtualPet
                 Console.WriteLine("Hunger:" + element.Hunger);
                 Console.WriteLine("Boredom:" + element.Boredom);
                 Console.WriteLine("Health:" + element.Health);
-
-
             }
         }
         
         public void IndividualPetList()
         {
             int i =0;
-            
 
             foreach(Pet element in listOfPets)
             {
                i = i + 1;
                 Console.WriteLine(i+ " "+element.Name );
-                    
             }
-            
             
         }
         
-
     }
+
 }
