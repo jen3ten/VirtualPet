@@ -53,9 +53,9 @@ namespace VirtualPet
             Console.WriteLine("Type 2 to select an individual pet.");
             Console.WriteLine("Type 3 to show shelter pets info.");
             Console.WriteLine("Type 4 to show status of all shelter pets.");
-            Console.WriteLine("Type 5 to feed all pets.");
-            Console.WriteLine("Type 6 to play with all shelter pets.");
-            Console.WriteLine("Type 7 to take all shelter pets to the vet.");
+            //Console.WriteLine("Type 5 to feed all pets.");
+            //Console.WriteLine("Type 6 to play with all shelter pets.");
+            //Console.WriteLine("Type 7 to take all shelter pets to the vet.");
             Console.WriteLine("Type 9 to exit\n");
             menuInput = Console.ReadLine();
             Console.Clear();
@@ -68,32 +68,32 @@ namespace VirtualPet
                 case "2": IndividualPetMenu();
                     break;
 
-                case "3": shelter.ViewPetList();
+                case "3": shelter.ViewAllPetList();
                     break;
 
-                case "4": shelter.ViewPetStatus();
+                case "4": shelter.ViewAllPetStatus();
                     break;
 
-                case "5":
-                    foreach (Pet element in shelter.listOfPets)
-                    {
-                        element.FeedPet();
-                    }
-                    break;
+                //case "5":
+                //    foreach (Organic element in shelter.listOfPets)
+                //    {
+                //        element.FeedPet();
+                //    }
+                //    break;
 
-                case "6":
-                    foreach (Pet element in shelter.listOfPets)
-                    {
-                        element.PlayWithPet();
-                    }
-                    break;
+                //case "6":
+                //    foreach (Pet element in shelter.listOfPets)
+                //    {
+                //        element.PlayWithPet();
+                //    }
+                //    break;
 
-                case "7":
-                    foreach (Pet element in shelter.listOfPets)
-                    {
-                        element.VetVisitPet();
-                    }
-                    break;
+                //case "7":
+                //    foreach (Organic element in shelter.listOfPets)
+                //    {
+                //        element.VetVisitPet();
+                //    }
+                //    break;
 
                 case "9": gameIsRunning = false;
                     break;
@@ -119,9 +119,9 @@ namespace VirtualPet
 
                 Console.WriteLine("\n 1. See pet info.");
                 Console.WriteLine(" 2. See pet status.");
-                Console.WriteLine(" 3. Feed pet.");
-                Console.WriteLine(" 4. Play with pet.");
-                Console.WriteLine(" 5. Take pet to the vet.");
+                //Console.WriteLine(" 3. Feed pet.");
+                //Console.WriteLine(" 4. Play with pet.");
+                //Console.WriteLine(" 5. Take pet to the vet.");
                 Console.WriteLine(" 6. Adopt pet from shelter");
                 Console.WriteLine(" 7. Choose a different pet.");
                 Console.WriteLine(" 8. Return to main menu.");
@@ -136,14 +136,14 @@ namespace VirtualPet
                 case "2": selectedPet.PetStatus();
                     break;
 
-                case "3": selectedPet.FeedPet();
-                    break;
+                //case "3": selectedPet.FeedPet();
+                    //break;
 
-                case "4": selectedPet.PlayWithPet();
-                    break;
+                //case "4": selectedPet.PlayWithPet();
+                //    break;
 
-                case "5": selectedPet.VetVisitPet();
-                    break;
+                //case "5": selectedPet.VetVisitPet();
+                   // break;
 
                 case "6": shelter.RemoveFromShelterList(selectedPet);
                           MainMenu();

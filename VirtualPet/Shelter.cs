@@ -29,6 +29,7 @@ namespace VirtualPet
         {
             Pet firstPet;
             Robotic firstRobotPet;
+            Organic firstOrganicPet;
 
             Console.WriteLine("What Type of pet is it?\n" + 
                 "Type 1 for Organic\n" + 
@@ -51,7 +52,7 @@ namespace VirtualPet
 
 
                 Console.Clear();
-                Console.WriteLine(firstRobotPet.Name + " the " + this.petType + " " + this.petSpecies + ", was added to the shelter!\n");
+                Console.WriteLine(firstRobotPet.Name + " the Robot " + this.petSpecies + ", was added to the shelter!\n");
             }
 
             else 
@@ -63,12 +64,12 @@ namespace VirtualPet
             petSpecies = Console.ReadLine();
 
 
-            firstPet = new Pet(petName, petSpecies);
-            AddToShelterList(firstPet);
+            firstOrganicPet = new Organic(petName, petSpecies);
+            AddToShelterList(firstOrganicPet);
 
             
             Console.Clear();
-            Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
+            Console.WriteLine(firstOrganicPet.Name + " was added to the shelter!\n");
             }
         }
 
@@ -85,7 +86,7 @@ namespace VirtualPet
             listOfPets.Remove(selectedPet);
         }
         
-        public void ViewPetList()
+        public void ViewAllPetList()
         {
             Console.WriteLine("Here are the pets in your shelter:\n");
             foreach (Pet element in listOfPets)
@@ -97,16 +98,25 @@ namespace VirtualPet
             }
         }
 
-        public void ViewPetStatus()
+        public void ViewAllPetStatus()
         {
             Console.WriteLine("Here are your pets' status:");
-            foreach(Pet element in listOfPets)
+            foreach(Organic element in listOfPets)
             {
                 Console.WriteLine("");
                 Console.WriteLine("Pet name:" + element.Name  );
                 Console.WriteLine("Hunger:" + element.Hunger);
                 Console.WriteLine("Boredom:" + element.Boredom);
                 Console.WriteLine("Health:" + element.Health);
+                Console.WriteLine("");
+            }
+            foreach (Robotic element in listOfPets)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Pet name:" + element.Name);
+                Console.WriteLine("Oil Level:" + element.OilLevel);
+                Console.WriteLine("Boredom:" + element.Boredom);
+                Console.WriteLine("Performance Level:" + element.PerformanceLevel);
                 Console.WriteLine("");
             }
         }

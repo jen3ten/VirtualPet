@@ -6,11 +6,37 @@ namespace VirtualPet
 {
     class Organic : Pet
     {
-        string PetType;
+        public int Hunger;
+        public int Health;
+
+
         public Organic(string name, string species):base(name,species)
         {
-            PetType = "orgranic";
+            PetType = "Organic";
+            Hunger = 50;
+            Health = 75;
         }
+
+        //public void FeedPet()
+        //{
+        //    Console.Clear();
+        //    Console.WriteLine("\nyou have fed " + this.Name);
+        //    Console.WriteLine("hunger has lowered by 1\n");
+        //    this.Hunger -= 1;
+        //}
+
+        
+
+        //public virtual void VetVisitPet()
+        //{
+        //    Console.Clear();
+        //    Console.WriteLine("\nyou have taken " + this.Name + " to the Vet");
+        //    Console.WriteLine("Health has increased by 1\n");
+
+
+        //    this.Health += 1;
+
+        //}
 
     }
 
