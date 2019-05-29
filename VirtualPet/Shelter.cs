@@ -36,7 +36,8 @@ namespace VirtualPet
             firstPet = new Pet(petName, petSpecies);
             AddToShelterList(firstPet);
 
-            Console.WriteLine("");
+            
+            Console.Clear();
             Console.WriteLine(firstPet.Name + " was added to the shelter!\n");
         }
 
@@ -68,10 +69,12 @@ namespace VirtualPet
             Console.WriteLine("Here are your pets' status:");
             foreach(Pet element in listOfPets)
             {
+                Console.WriteLine("");
                 Console.WriteLine("Pet name:" + element.Name  );
                 Console.WriteLine("Hunger:" + element.Hunger);
                 Console.WriteLine("Boredom:" + element.Boredom);
                 Console.WriteLine("Health:" + element.Health);
+                Console.WriteLine("");
             }
         }
         

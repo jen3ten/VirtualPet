@@ -24,14 +24,16 @@ namespace VirtualPet
         
         public void FeedPet()
         {
-            Console.WriteLine("\nyou have fed your pet");
+            Console.Clear();
+            Console.WriteLine("\nyou have fed " + this.Name);
             Console.WriteLine("hunger has lowered by 1\n");
             this.Hunger -= 1;
         }
 
         public void PlayWithPet()
         {
-            Console.WriteLine("\nyou have played with your pet");
+            Console.Clear();
+            Console.WriteLine("\nyou have played with "+ this.Name);
             Console.WriteLine("boredom has lowered by 1");
             Console.WriteLine("Health has increased by 1\n");
 
@@ -42,7 +44,8 @@ namespace VirtualPet
 
         public void VetVisitPet()
         {
-            Console.WriteLine("\nyou have taken your pet to the Vet");
+            Console.Clear();
+            Console.WriteLine("\nyou have taken " + this.Name + " to the Vet");
             Console.WriteLine("Health has increased by 1\n");
 
 
@@ -52,6 +55,7 @@ namespace VirtualPet
 
         public void PetStatus()
         {
+            Console.Clear();
             Console.WriteLine("\n" + this.Name + "'s hunger is " + this.Hunger);
             Console.WriteLine(this.Name + "'s boredom is " + this.Boredom);
             Console.WriteLine(this.Name + "'s health is " + this.Health + "\n");
@@ -59,6 +63,7 @@ namespace VirtualPet
 
         public void PetInfo()
         {
+            Console.Clear();
             Console.WriteLine("\nYour pet name is " + this.Name + " and your pet is a " + this.Species + ".\n");
 
 
