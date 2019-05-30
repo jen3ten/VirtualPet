@@ -107,56 +107,130 @@ namespace VirtualPet
 
         public void IndividualPetMenu()
         {
-            Console.WriteLine("Type the number of the pet you want to choose.");
-            shelter.IndividualPetList();
+            Console.WriteLine("Type 1 to interact with an organic pet,");
+            Console.WriteLine("Type 2 to interact with an robotic pet.");
+            string individualPetMenuChoice = Console.ReadLine();
+            if (individualPetMenuChoice == "1")
+                
+            {   
+                Console.WriteLine("Type the number of the pet you would like to choose.");
+                shelter.IndividualOrganicPetList();
 
-            int petChoiceIndex = Convert.ToInt32(Console.ReadLine());
-            Pet selectedPet = shelter.listOfPets[petChoiceIndex - 1];
-            while (menuInput =="2")
-            {
-                Console.WriteLine("You have selected" + selectedPet.Name + ".");
-                Console.WriteLine("What would you like to do?");
-
-                Console.WriteLine("\n 1. See pet info.");
-                Console.WriteLine(" 2. See pet status.");
-                //Console.WriteLine(" 3. Feed pet.");
-                //Console.WriteLine(" 4. Play with pet.");
-                //Console.WriteLine(" 5. Take pet to the vet.");
-                Console.WriteLine(" 6. Adopt pet from shelter");
-                Console.WriteLine(" 7. Choose a different pet.");
-                Console.WriteLine(" 8. Return to main menu.");
-
-
-                string secondMenuInput = Console.ReadLine();
-                switch (secondMenuInput)
+                
+                int organicPetChoiceIndex = Convert.ToInt32(Console.ReadLine());
+                Organic selectedOrganicPet = shelter.listOfOrganicPets[organicPetChoiceIndex - 1];
+                while (menuInput == "2" && individualPetMenuChoice == "1")
                 {
-                case "1": selectedPet.PetInfo();
-                    break;
+                    Console.WriteLine("You have selected" + selectedOrganicPet.Name + ".");
+                    Console.WriteLine("What would you like to do?");
 
-                case "2": selectedPet.PetStatus();
-                    break;
+                    Console.WriteLine("\n 1. See pet info.");
+                    Console.WriteLine(" 2. See pet status.");
+                    //Console.WriteLine(" 3. Feed pet.");
+                    //Console.WriteLine(" 4. Play with pet.");
+                    //Console.WriteLine(" 5. Take pet to the vet.");
+                    Console.WriteLine(" 6. Adopt pet from shelter");
+                    Console.WriteLine(" 7. Choose a different pet.");
+                    Console.WriteLine(" 8. Return to main menu.");
 
-                //case "3": selectedPet.FeedPet();
-                    //break;
 
-                //case "4": selectedPet.PlayWithPet();
-                //    break;
+                    string secondMenuInput = Console.ReadLine();
+                    switch (secondMenuInput)
+                    {
+                        case "1":
+                            selectedOrganicPet.PetInfo();
+                            break;
 
-                //case "5": selectedPet.VetVisitPet();
-                   // break;
+                        case "2":
+                            selectedOrganicPet.PetStatus();
+                            break;
 
-                case "6": shelter.RemoveFromShelterList(selectedPet);
-                          MainMenu();
-                     break;
+                            //case "3": selectedOrganicPet.FeedPet();
+                            //break;
 
-                case "7": IndividualPetMenu();
-                    break;
+                            //case "4": selectedOrganicPet.PlayWithPet();
+                            //    break;
 
-                case "8": MainMenu();
-                    break;
+                            //case "5": selectedOrganicPet.VetVisitPet();
+                            // break;
+
+                            // case "6": shelter.RemoveFromShelterOrganicList(selectedOrganicPet);
+                            MainMenu();
+                            break;
+
+                        case "7":
+                            IndividualPetMenu();
+                            break;
+
+                        case "8":
+                            MainMenu();
+                            break;
+                    }
+
                 }
-
             }
+            else if (individualPetMenuChoice == "2")
+            {
+                Console.WriteLine("Type the number of the pet you would like to choose.");
+                shelter.IndividualRoboticPetList();
+                
+                int roboticPetChoiceIndex = Convert.ToInt32(Console.ReadLine());
+                Robotic selectedRoboticPet = shelter.listOfRoboticPets[roboticPetChoiceIndex - 1];
+                while (menuInput == "2" && individualPetMenuChoice == "2")
+                {
+                    Console.WriteLine("You have selected" + selectedRoboticPet.Name + ".");
+                    Console.WriteLine("What would you like to do?");
+
+                    Console.WriteLine("\n 1. See pet info.");
+                    Console.WriteLine(" 2. See pet status.");
+                    //Console.WriteLine(" 3. Feed pet.");
+                    //Console.WriteLine(" 4. Play with pet.");
+                    //Console.WriteLine(" 5. Take pet to the vet.");
+                    Console.WriteLine(" 6. Adopt pet from shelter");
+                    Console.WriteLine(" 7. Choose a different pet.");
+                    Console.WriteLine(" 8. Return to main menu.");
+
+
+                    string secondMenuInput = Console.ReadLine();
+                    switch (secondMenuInput)
+                    {
+                        case "1":
+                            selectedRoboticPet.PetInfo();
+                            break;
+
+                        case "2":
+                            selectedRoboticPet.PetStatus();
+                            break;
+
+                            //case "3": selectedRoboticPet.FeedPet();
+                            //break;
+
+                            //case "4": selectedRoboticPet.PlayWithPet();
+                            //    break;
+
+                            //case "5": selectedRoboticPet.VetVisitPet();
+                            // break;
+
+                            // case "6": shelter.RemoveFromShelterRoboticList(selectedRoboticPet);
+                            MainMenu();
+                            break;
+
+                        case "7":
+                            IndividualPetMenu();
+                            break;
+
+                        case "8":
+                            MainMenu();
+                            break;
+                    }
+
+                }
+            }
+            Console.WriteLine("Type the number of the pet you want to choose.");
+            shelter.IndividualRoboticPetList();
+
+            
+            
 
         }
 

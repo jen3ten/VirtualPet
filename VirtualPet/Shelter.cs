@@ -91,19 +91,22 @@ namespace VirtualPet
         {
             listOfOrganicPets.Add(firstOrganicPet);
         }
-        public void RemoveFromShelterList(Pet selectedPet)
+        public void RemoveFromShelterOrganicList(Organic selectedOrganicPet)
         {
-            Console.WriteLine(selectedPet.Name + " has been adopted");
-            listOfPets.Remove(selectedPet);
-            
-            //if (petType == "robotic")
-            //{
-            //    listOfRoboticPets.Remove();
-            //}
+            Console.WriteLine(selectedOrganicPet.Name + " has been adopted");
+            listOfPets.Remove(selectedOrganicPet);
         }
-        
-        
-        public void ViewAllPetList()
+        public void RemoveFromShelterRoboticList(Robotic selectedRoboticPet)
+        {
+            Console.WriteLine(selectedRoboticPet.Name + " has been adopted");
+            listOfPets.Remove(selectedRoboticPet);
+        }
+
+
+
+
+
+            public void ViewAllPetList()
         {
             Console.WriteLine("Here are the pets in your shelter:\n");
             Console.WriteLine("Organic pets:\n");
@@ -148,7 +151,7 @@ namespace VirtualPet
             }
         }
         
-        public void IndividualPetList()
+        public void IndividualOrganicPetList()
         {
             int i =0;
 
@@ -157,12 +160,17 @@ namespace VirtualPet
                i = i + 1;
                 Console.WriteLine(i+ " "+element.Name );
             }
+       
+        }
+        public void IndividualRoboticPetList()
+        {
+            int i = 0;
+            
             foreach (Robotic element in listOfRoboticPets)
             {
                 i = i + 1;
                 Console.WriteLine(i + " " + element.Name);
             }
-
         }
         
     }
