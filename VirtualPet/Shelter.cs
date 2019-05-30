@@ -51,6 +51,7 @@ namespace VirtualPet
 
                 firstRobotPet = new Robotic(petName, petSpecies);
                 AddToShelterList(firstRobotPet);
+                AddToRobotShelterList(firstRobotPet);
 
 
                 Console.Clear();
@@ -68,6 +69,7 @@ namespace VirtualPet
 
             firstOrganicPet = new Organic(petName, petSpecies);
             AddToShelterList(firstOrganicPet);
+            AddToOrganicShelterList(firstOrganicPet);
 
             
             Console.Clear();
@@ -81,7 +83,14 @@ namespace VirtualPet
             listOfPets.Add(firstPet);
 
         }
-
+        public void AddToRobotShelterList(Robotic firstRobotPet)
+        {
+            listOfRoboticPets.Add(firstRobotPet);
+        }
+        public void AddToOrganicShelterList(Organic firstOrganicPet)
+        {
+            listOfOrganicPets.Add(firstOrganicPet);
+        }
         public void RemoveFromShelterList(Pet selectedPet)
         {
             Console.WriteLine(selectedPet.Name + " has been adopted");
@@ -102,8 +111,8 @@ namespace VirtualPet
 
         public void ViewAllPetStatus()
         {
-            Console.WriteLine("Here are your pets' status:");
-            foreach(Pet element in listOfPets)
+            Console.WriteLine("Here are your organic pets' statuses:");
+            foreach(Organic element in listOfOrganicPets)
             {
                 Console.WriteLine("");
                 Console.WriteLine("Pet name:" + element.Name  );
@@ -112,7 +121,8 @@ namespace VirtualPet
                 Console.WriteLine("Health:" + element.Health);
                 Console.WriteLine("");
             }
-            foreach (Pet element in listOfPets)
+            Console.WriteLine("Here are your robotic pet statuses:");
+            foreach (Robotic element in listOfRoboticPets)
             {
                 Console.WriteLine("");
                 Console.WriteLine("Pet name:" + element.Name);
