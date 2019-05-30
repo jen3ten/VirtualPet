@@ -29,7 +29,7 @@ namespace VirtualPet
 
         public void CreatePet()
         {
-            Pet firstPet;
+            
             Robotic firstRobotPet;
             Organic firstOrganicPet;
 
@@ -50,7 +50,7 @@ namespace VirtualPet
 
 
                 firstRobotPet = new Robotic(petName, petSpecies);
-                AddToShelterList(firstRobotPet);
+               
                 AddToRobotShelterList(firstRobotPet);
 
 
@@ -68,7 +68,7 @@ namespace VirtualPet
 
 
             firstOrganicPet = new Organic(petName, petSpecies);
-            AddToShelterList(firstOrganicPet);
+          
             AddToOrganicShelterList(firstOrganicPet);
 
             
@@ -95,12 +95,27 @@ namespace VirtualPet
         {
             Console.WriteLine(selectedPet.Name + " has been adopted");
             listOfPets.Remove(selectedPet);
+            
+            //if (petType == "robotic")
+            //{
+            //    listOfRoboticPets.Remove();
+            //}
         }
+        
         
         public void ViewAllPetList()
         {
             Console.WriteLine("Here are the pets in your shelter:\n");
-            foreach (Pet element in listOfPets)
+            Console.WriteLine("Organic pets:\n");
+            foreach (Organic element in listOfOrganicPets)
+            {
+                Console.WriteLine("Pet Name: " + element.Name);
+                Console.WriteLine("Pet Species: " + element.Species);
+                Console.WriteLine("Pet Type: " + element.PetType);
+                Console.WriteLine("");
+            }
+            Console.WriteLine("Robotic pets: \n");
+            foreach (Robotic element in listOfRoboticPets)
             {
                 Console.WriteLine("Pet Name: " + element.Name);
                 Console.WriteLine("Pet Species: " + element.Species);
@@ -137,12 +152,17 @@ namespace VirtualPet
         {
             int i =0;
 
-            foreach(Pet element in listOfPets)
+            foreach(Organic element in listOfOrganicPets)
             {
                i = i + 1;
                 Console.WriteLine(i+ " "+element.Name );
             }
-            
+            foreach (Robotic element in listOfRoboticPets)
+            {
+                i = i + 1;
+                Console.WriteLine(i + " " + element.Name);
+            }
+
         }
         
     }

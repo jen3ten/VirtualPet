@@ -16,5 +16,25 @@ namespace VirtualPet
             OilLevel = 50;
             PerformanceLevel = 75;
         }
+        public void OilPet()
+        {
+            Console.Clear();
+            Console.WriteLine("\nyou have oiled " + this.Name);
+            Console.WriteLine("oil level has increased by 1\n");
+            this.OilLevel += 1;
+        }
+
+
+
+        public virtual void MechanicVisitPet()
+        {
+            Console.Clear();
+            Console.WriteLine("\nyou have taken " + this.Name + " to the mechanic.");
+            Console.WriteLine("Performance level has increased by 1.\n");
+
+
+            this.PerformanceLevel += 1;
+
+        }
     }
 }
