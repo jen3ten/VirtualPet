@@ -75,21 +75,21 @@ namespace VirtualPet
                     break;
 
                 //case "5":
-                //    foreach (Organic element in shelter.listOfPets)
+                //    foreach (Organic element in shelter.listOfOrganicPets)
                 //    {
                 //        element.FeedPet();
                 //    }
                 //    break;
 
                 //case "6":
-                //    foreach (Pet element in shelter.listOfPets)
+                //    foreach (Pet element in shelter.listOfOrganicPets)
                 //    {
                 //        element.PlayWithPet();
                 //    }
                 //    break;
 
                 //case "7":
-                //    foreach (Organic element in shelter.listOfPets)
+                //    foreach (Organic element in shelter.listOfOrganicPets)
                 //    {
                 //        element.VetVisitPet();
                 //    }
@@ -126,9 +126,9 @@ namespace VirtualPet
 
                     Console.WriteLine("\n 1. See pet info.");
                     Console.WriteLine(" 2. See pet status.");
-                    //Console.WriteLine(" 3. Feed pet.");
-                    //Console.WriteLine(" 4. Play with pet.");
-                    //Console.WriteLine(" 5. Take pet to the vet.");
+                    Console.WriteLine(" 3. Feed pet.");
+                    Console.WriteLine(" 4. Play with pet.");
+                    Console.WriteLine(" 5. Take pet to the vet.");
                     Console.WriteLine(" 6. Adopt pet from shelter");
                     Console.WriteLine(" 7. Choose a different pet.");
                     Console.WriteLine(" 8. Return to main menu.");
@@ -145,11 +145,12 @@ namespace VirtualPet
                             selectedOrganicPet.PetStatus();
                             break;
 
-                            //case "3": selectedOrganicPet.FeedPet();
-                            //break;
+                        //case "3": selectedOrganicPet.FeedPet();
+                        //break;
 
-                            //case "4": selectedOrganicPet.PlayWithPet();
-                            //    break;
+                        case "4":
+                            selectedOrganicPet.PlayWithPet();
+                            break;
 
                             //case "5": selectedOrganicPet.VetVisitPet();
                             // break;
@@ -183,9 +184,9 @@ namespace VirtualPet
 
                     Console.WriteLine("\n 1. See pet info.");
                     Console.WriteLine(" 2. See pet status.");
-                    //Console.WriteLine(" 3. Feed pet.");
-                    //Console.WriteLine(" 4. Play with pet.");
-                    //Console.WriteLine(" 5. Take pet to the vet.");
+                    Console.WriteLine(" 3. Oil pet.");
+                    Console.WriteLine(" 4. Play with pet.");
+                    Console.WriteLine(" 5. Take pet to the mechanic.");
                     Console.WriteLine(" 6. Adopt pet from shelter");
                     Console.WriteLine(" 7. Choose a different pet.");
                     Console.WriteLine(" 8. Return to main menu.");
@@ -202,11 +203,12 @@ namespace VirtualPet
                             selectedRoboticPet.PetStatus();
                             break;
 
-                            //case "3": selectedRoboticPet.FeedPet();
-                            //break;
+                        //case "3": selectedRoboticPet.FeedPet();
+                        //break;
 
-                            //case "4": selectedRoboticPet.PlayWithPet();
-                            //    break;
+                        case "4":
+                            selectedRoboticPet.PlayWithPet();
+                            break;
 
                             //case "5": selectedRoboticPet.VetVisitPet();
                             // break;

@@ -19,22 +19,22 @@ namespace VirtualPet
             Boredom = 50;
             
         }
-        
-        
 
-        //public void PlayWithPet()
-        //{
-        //    Console.Clear();
-        //    Console.WriteLine("\nyou have played with "+ this.Name);
-        //    Console.WriteLine("boredom has lowered by 1");
-        //    Console.WriteLine("Health has increased by 1\n");
 
-        //    this.Boredom -= 1;
-            
 
-        //}
+        public virtual void PlayWithPet()
+        {
+            Console.Clear();
+            Console.WriteLine("\nyou have played with " + this.Name);
+            Console.WriteLine("boredom has lowered by 1");
+           
 
-        
+            this.Boredom -= 1;
+
+
+        }
+
+
 
         public void PetStatus()
         {

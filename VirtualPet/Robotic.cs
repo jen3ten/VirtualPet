@@ -36,5 +36,14 @@ namespace VirtualPet
             this.PerformanceLevel += 1;
 
         }
+        public override void PlayWithPet()
+        {
+            base.PlayWithPet();
+            Console.WriteLine("Performance level has increased by 1.");
+            this.PerformanceLevel += 1;
+           
+
+
+        }
     }
 }
