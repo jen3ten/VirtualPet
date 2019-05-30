@@ -18,7 +18,9 @@ namespace VirtualPet
             Name = name;
         }
 
-        public List <Pet> listOfPets = new List <Pet>();
+        public List<Pet> listOfPets = new List<Pet>();
+        public List <Organic> listOfOrganicPets = new List <Organic>();
+        public List <Robotic> listOfRoboticPets = new List <Robotic>();
 
         public void CreateShelter()
         {
@@ -101,7 +103,7 @@ namespace VirtualPet
         public void ViewAllPetStatus()
         {
             Console.WriteLine("Here are your pets' status:");
-            foreach(Organic element in listOfPets)
+            foreach(Pet element in listOfPets)
             {
                 Console.WriteLine("");
                 Console.WriteLine("Pet name:" + element.Name  );
@@ -110,7 +112,7 @@ namespace VirtualPet
                 Console.WriteLine("Health:" + element.Health);
                 Console.WriteLine("");
             }
-            foreach (Robotic element in listOfPets)
+            foreach (Pet element in listOfPets)
             {
                 Console.WriteLine("");
                 Console.WriteLine("Pet name:" + element.Name);
