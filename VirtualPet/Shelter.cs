@@ -9,7 +9,7 @@ namespace VirtualPet
         string petName = "";
         string petSpecies = "";
         string inputPetType = "";
-        string petType = "";
+        
 
         public string Name;
 
@@ -18,7 +18,7 @@ namespace VirtualPet
             Name = name;
         }
 
-        public List<Pet> listOfPets = new List<Pet>();
+        
         public List <Organic> listOfOrganicPets = new List <Organic>();
         public List <Robotic> listOfRoboticPets = new List <Robotic>();
 
@@ -41,7 +41,7 @@ namespace VirtualPet
 
             if (inputPetType == "2")
             {
-                petType = "Robot";
+               
                 Console.WriteLine("\nEnter your pet name:");
                 petName = Console.ReadLine();
 
@@ -78,11 +78,11 @@ namespace VirtualPet
         }
 
 
-        public void AddToShelterList(Pet firstPet)
-        {
-            listOfPets.Add(firstPet);
+        //public void AddToShelterList(Pet firstPet)
+        //{
+        //    listOfPets.Add(firstPet);
 
-        }
+        //}
         public void AddToRobotShelterList(Robotic firstRobotPet)
         {
             listOfRoboticPets.Add(firstRobotPet);
@@ -94,12 +94,12 @@ namespace VirtualPet
         public void RemoveFromShelterOrganicList(Organic selectedOrganicPet)
         {
             Console.WriteLine(selectedOrganicPet.Name + " has been adopted");
-            listOfPets.Remove(selectedOrganicPet);
+            listOfOrganicPets.Remove(selectedOrganicPet);
         }
         public void RemoveFromShelterRoboticList(Robotic selectedRoboticPet)
         {
             Console.WriteLine(selectedRoboticPet.Name + " has been adopted");
-            listOfPets.Remove(selectedRoboticPet);
+            listOfRoboticPets.Remove(selectedRoboticPet);
         }
 
 
@@ -151,6 +151,7 @@ namespace VirtualPet
             }
         }
         
+
         public void IndividualOrganicPetList()
         {
             int i =0;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class Robotic : Pet
+    public class Robotic : Pet
     {
         public int OilLevel;
         public int PerformanceLevel;
@@ -43,6 +43,13 @@ namespace VirtualPet
             this.PerformanceLevel += 1;
            
 
+
+        }
+        public void RoboticStatsDecay()
+        {
+            this.OilLevel -= 1;
+            this.Boredom += 1;
+            this.PerformanceLevel -= 1;
 
         }
     }

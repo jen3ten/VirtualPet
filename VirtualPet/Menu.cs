@@ -43,6 +43,17 @@ namespace VirtualPet
             {
                 Console.WriteLine("Select from these menu options.");
                 MainMenu();
+
+                foreach (Organic element in shelter.listOfOrganicPets)
+                {
+                    element.OrganicStatsDecay();
+                }
+                foreach (Robotic element in shelter.listOfRoboticPets)
+                {
+                    element.RoboticStatsDecay();
+                }
+               
+
             }
             return true;
            
@@ -53,9 +64,9 @@ namespace VirtualPet
             Console.WriteLine("Type 2 to select an individual pet.");
             Console.WriteLine("Type 3 to show shelter pets info.");
             Console.WriteLine("Type 4 to show status of all shelter pets.");
-            //Console.WriteLine("Type 5 to feed all pets.");
-            //Console.WriteLine("Type 6 to play with all shelter pets.");
-            //Console.WriteLine("Type 7 to take all shelter pets to the vet.");
+            Console.WriteLine("Type 5 to feed or oil all pets.");
+            Console.WriteLine("Type 6 to play with all shelter pets.");
+            Console.WriteLine("Type 7 to take all shelter pets to the vet or to the mechanic.");
             Console.WriteLine("Type 9 to exit\n");
             menuInput = Console.ReadLine();
             Console.Clear();
@@ -74,26 +85,39 @@ namespace VirtualPet
                 case "4": shelter.ViewAllPetStatus();
                     break;
 
-                //case "5":
-                //    foreach (Organic element in shelter.listOfOrganicPets)
-                //    {
-                //        element.FeedPet();
-                //    }
-                //    break;
+                case "5":
+                    foreach (Organic element in shelter.listOfOrganicPets)
+                    {
+                       element.FeedPet();
+                    }
+                    foreach (Robotic element in shelter.listOfRoboticPets)
+                    {
+                        element.OilPet();
+                    }
+                    break;
 
-                //case "6":
-                //    foreach (Pet element in shelter.listOfOrganicPets)
-                //    {
-                //        element.PlayWithPet();
-                //    }
-                //    break;
+                case "6":
+                    foreach (Organic element in shelter.listOfOrganicPets)
+                    {
+                        element.PlayWithPet();
+                    }
+                    foreach (Robotic element in shelter.listOfRoboticPets)
+                    {
+                        element.PlayWithPet();
+                    }
+                    break;
 
-                //case "7":
-                //    foreach (Organic element in shelter.listOfOrganicPets)
-                //    {
-                //        element.VetVisitPet();
-                //    }
-                //    break;
+                case "7":
+                    foreach (Organic element in shelter.listOfOrganicPets)
+                    {
+                        element.VetVisitPet();
+                    }
+                 
+                    foreach (Robotic element in shelter.listOfRoboticPets)
+                    {
+                        element.MechanicVisitPet();
+                    }
+                    break;
 
                 case "9": gameIsRunning = false;
                     break;
@@ -145,17 +169,17 @@ namespace VirtualPet
                             selectedOrganicPet.PetStatus();
                             break;
 
-                        //case "3": selectedOrganicPet.FeedPet();
-                        //break;
+                        case "3": selectedOrganicPet.FeedPet();
+                        break;
 
                         case "4":
                             selectedOrganicPet.PlayWithPet();
                             break;
 
-                            //case "5": selectedOrganicPet.VetVisitPet();
-                            // break;
+                            case "5": selectedOrganicPet.VetVisitPet();
+                            break;
 
-                            // case "6": shelter.RemoveFromShelterOrganicList(selectedOrganicPet);
+                            case "6": shelter.RemoveFromShelterOrganicList(selectedOrganicPet);
                             MainMenu();
                             break;
 
@@ -203,17 +227,17 @@ namespace VirtualPet
                             selectedRoboticPet.PetStatus();
                             break;
 
-                        //case "3": selectedRoboticPet.FeedPet();
-                        //break;
+                        case "3": selectedRoboticPet.OilPet();
+                            break;
 
                         case "4":
                             selectedRoboticPet.PlayWithPet();
                             break;
 
-                            //case "5": selectedRoboticPet.VetVisitPet();
-                            // break;
+                        case "5": selectedRoboticPet.MechanicVisitPet();
+                            break;
 
-                            // case "6": shelter.RemoveFromShelterRoboticList(selectedRoboticPet);
+                        case "6": shelter.RemoveFromShelterRoboticList(selectedRoboticPet);
                             MainMenu();
                             break;
 
@@ -225,7 +249,7 @@ namespace VirtualPet
                             MainMenu();
                             break;
                     }
-
+                    
                 }
             }
             Console.WriteLine("Type the number of the pet you want to choose.");

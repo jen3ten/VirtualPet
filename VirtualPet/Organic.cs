@@ -4,13 +4,13 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class Organic : Pet
+    public class Organic : Pet
     {
         public int Hunger;
         public int Health;
 
 
-        public Organic(string name, string species):base(name,species)
+        public Organic(string name, string species) : base(name, species)
         {
             PetType = "Organic";
             Hunger = 50;
@@ -45,6 +45,13 @@ namespace VirtualPet
 
 
 
+        }
+        public void OrganicStatsDecay()
+        {
+            this.Hunger += 1;
+            this.Boredom += 1;
+            this.Health -= 1;
+           
         }
 
     }

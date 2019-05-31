@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class Pet
+    public class Pet
     {
      
         public string Name;
