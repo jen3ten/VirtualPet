@@ -15,6 +15,7 @@ namespace VirtualPet.Tests
             sut.OilPet();
             Assert.Equal(51, sut.OilLevel);
         }
+
         [Fact]
         public void PlayWithPetShouldDecreaseBoredomAndIncreasePerformanceLevelByOneEach()
         {
