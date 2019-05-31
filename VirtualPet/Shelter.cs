@@ -33,14 +33,20 @@ namespace VirtualPet
                 "Type 1 for Organic\n" + 
                 "Type 2 for Robotic");
             inputPetType = Console.ReadLine();
+            Console.WriteLine("\nEnter your pet name:");
+            petName = Console.ReadLine();
+
+            Console.WriteLine("\nEnter your pet species:");
+            petSpecies = Console.ReadLine();
+
 
             if (inputPetType == "2")
             {
-                Console.WriteLine("\nEnter your pet name:");
-                petName = Console.ReadLine();
+                //Console.WriteLine("\nEnter your pet name:");
+                //petName = Console.ReadLine();
 
-                Console.WriteLine("\nEnter your pet species:");
-                petSpecies = Console.ReadLine();
+                //Console.WriteLine("\nEnter your pet species:");
+                //petSpecies = Console.ReadLine();
 
                 firstRobotPet = new Robotic(petName, petSpecies);
                 AddToRobotShelterList(firstRobotPet);
@@ -51,11 +57,11 @@ namespace VirtualPet
 
             else 
             {
-                Console.WriteLine("\nEnter your pet name:");
-                petName = Console.ReadLine();
+                //Console.WriteLine("\nEnter your pet name:");
+                //petName = Console.ReadLine();
 
-                Console.WriteLine("\nEnter your pet species:");
-                petSpecies = Console.ReadLine();
+                //Console.WriteLine("\nEnter your pet species:");
+                //petSpecies = Console.ReadLine();
 
                 firstOrganicPet = new Organic(petName, petSpecies);
                 AddToOrganicShelterList(firstOrganicPet);

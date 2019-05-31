@@ -24,7 +24,8 @@ namespace VirtualPet
             this.Hunger -= 1;
         }
 
-        public virtual void VetVisitPet()
+        //public virtual void VetVisitPet()
+        public void VetVisitPet()
         {
             Console.WriteLine("\nyou have taken " + this.Name + " to the Vet");
             Console.WriteLine("Health has increased by 1\n");

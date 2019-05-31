@@ -24,7 +24,8 @@ namespace VirtualPet
             this.OilLevel += 1;
         }
 
-        public virtual void MechanicVisitPet()
+        //public virtual void MechanicVisitPet()
+        public void MechanicVisitPet()
         {
             Console.WriteLine("\nyou have taken " + this.Name + " to the mechanic.");
             Console.WriteLine("Performance level has increased by 1.\n");
